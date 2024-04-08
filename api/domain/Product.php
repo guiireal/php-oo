@@ -18,6 +18,7 @@ class Product
     public static function setConnection(PDO $connection): void
     {
         self::$connection = $connection;
+        ProductGateway::setConnection($connection);
     }
 
     public static function find(int|string $id)
